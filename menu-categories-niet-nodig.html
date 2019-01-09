@@ -1,0 +1,189 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<!-- saved from url=(0022)http://internet.e-mail -->
+<!-- saved from url=(0022)http://internet.e-mail -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>David Chu's China Bistro</title>
+    <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> <!--di de bootstrap-->
+    <link rel="stylesheet" href="C:\Users\Luc\OneDrive\Coursera\examples\Lecture34\after\Bs4\css\bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  </head>
+<body>
+  <header>
+    <nav id="header-nav" class="navbar navbar-expand-md navbar-light"> <!--navbar verplicht; expand voor horizontaal menu level vd button; zonder navbar-light krijgen we de toggle button niet te zien-->
+      <div class="container justify-content-between align-items-start d-flex flex-md-wrap"> 
+      <!--Dit extra level omdat nav standaard container-fluid is zonder begin padding. We kunnen alle classes van dit level in het nav level zetten en dit level weglaten, maar dan loopt de bg-color vd header-nav niet tot de randen. Die is dan ook beperkt tot de container. Alles achter container is om de content hieronder links boven te aligneren. Flex-md-wrap om te bekomen dat
+      	zoals in zijn vb. de menu rij naar onder verschuift (float gedrag) bij md en er niet genoeg plaats meer is. 
+      	Als niet gebruikt, dan vallen gewoon de laatste cijfers van het telnr buiten het scherm als we verkleinen. -->	
+          <a href="index.html" class="d-none d-lg-block"> <!--itt tot L32 hier zijn vb. gevolgd met image als bg in styles.css. Gaat niet anders omdat getoonde img afhangt van width, met media query-->
+            <div id="logo-img"></div>
+          <!--img id="logo-img" src="./images/restaurant-logo_large.png"> <!--id voor oa width en heighth-->
+          </a>
+         <!--Deze extra div om de sm-nowrap te kunnen meegeven, anders kwam bij kleinste scherm de button naar onder-->
+          <div class="navbar-brand">
+          	<a href="index.html"><h1>David Chu's China Bistro</h1></a> 
+          	<img src="images/star-k-logo.png" alt="Kosher certification" >
+          	<span>Kosher Certified</span>
+          </div> 
+  		  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#collapsable-nav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  		  <!-- data-toggle is de naam van de bs plugin in bootstrap.js. Aria is voor sr -->
+          <!--navbar-button wegens te grot vervangen door 3 icon-bars zoals in https://github.com/iamphill/Bootstrap-Offcanvas/issues/30. Hij heeft de icon-bar styling uit Bs3 in zijn eigen style gezet.-->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="sr-only">Toggle navigation</span>
+  		  </button>
+  		
+  		  <div class="collapse navbar-collapse" id="collapsable-nav"> <!--2 verplichte classes; id van de data-target in button-->
+    		<ul id="nav-list" class="navbar-nav ml-auto nav-pills"> <!--navbar-nav verplicht, maakt dat ze naast elkaar komen. Door de ml-auto komt het tegen de rechter margin vd container. Is me niet duidelijk waarom dat niet gebeurt als de ml-auto in de bovenliggende div staat. nav-pills nodig als je hieronder .active wil gebruiken om die tab te laten oplichten als je op
+          die pagina zit. Ongestyled is het blauw.-->
+      		 <li class="active">
+              <a href="menu-categories.html" class="nav-link"> <!--nav-link om de awesome en tekst te groeperen. Dan worden ze ook 1 geheel voor de background in de a:hoover--> 
+                <i class="fas fa-utensils"></i><br class="d-none d-md-block"> Menu</a>
+                <!--br om het woord onder de icon te zetten, maar niet bij xs-->
+                <!--glyphycons werden in bs4 vervangen door font awesomes https://fontawesome.com/icons/certificate?style=solid-->
+             </li>
+             <li>
+              <a href="#" class="nav-link">
+                <i class="fas fa-info-circle"></i><br class="d-none d-md-block"> About</a>
+             </li>
+             <li>
+              <a href="#" class="nav-link">
+                <i class="fas fa-certificate"></i><br class="d-none d-md-block"> Awards</a>
+             </li>
+             <li id="phone" class="d-none d-md-block"> <!--Bij xs en sm doen we iets anders met het tel.nr., zie later-->
+              <a href="tel:410-602-5008" class="nav-link">
+                <span>410-&#x2060;602-&#x2060;5008</span></a> <div>* We Deliver</div> <!---&#x2060; anders veroorzaakt - een linebreak-->
+              </li>
+    		</ul>
+  		  </div> 
+      </div>
+    </nav>
+  </header>
+  <div id="call-btn" class="d-md-none">
+    <a class="btn" href="tel:410-602-5008">
+    <i class="fa fa-phone"></i>
+    410-602-5008
+    </a>
+  </div>
+  <div id="xs-deliver" class="text-center d-md-none">* We Deliver</div>
+  <div id="main-content" class="container"> <!--alignering met container van header-->
+    <h2 id="menu-categories-title" class="text-center">Menu Categories</h2>
+    <div class="text-center">
+      Substituting white rice with brown rice or fried rice after 3:00pm will be $1.50 for a pint and $2.50 for a quart.
+    </div>
+
+    <section class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xxs-12">
+        <a href="single-category.html">
+          <div class="category-tile">
+            <img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+            <span>Lunch</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xxs-12">
+        <a href="single-category.html">
+          <div class="category-tile">
+            <img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+            <span>Lunch</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xxs-12">
+        <a href="single-category.html">
+          <div class="category-tile">
+            <img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+            <span>Lunch</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xxs-12">
+        <a href="single-category.html">
+          <div class="category-tile">
+            <img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+            <span>Lunch</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xxs-12">
+        <a href="single-category.html">
+          <div class="category-tile">
+            <img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+            <span>Lunch</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xxs-12">
+        <a href="single-category.html">
+          <div class="category-tile">
+            <img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+            <span>Lunch</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xxs-12">
+        <a href="single-category.html">
+          <div class="category-tile">
+            <img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+            <span>Lunch</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xxs-12">
+        <a href="single-category.html">
+          <div class="category-tile">
+            <img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+            <span>Lunch</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xxs-12">
+        <a href="single-category.html">
+          <div class="category-tile">
+            <img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+            <span>Lunch</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </div>
+
+    <footer class="card-footer">
+    <div class="container">
+      <div class="row">
+        <section id="hours" class="col-sm-4">
+          <span>Hours:</span><br>
+          Sun-Thurs: 11:15am - 10:00pm<br>
+          Fri: 11:15am - 2:30pm<br>
+          Saturday Closed
+          <hr class="d-sm-none">
+        </section>
+        <section id="address" class="col-sm-4">
+          <span>Address:</span><br>
+          7105 Reisterstown Road<br>
+          Baltimore, MD 21215
+          <p>* Delivery area within 3-4 miles, with minimum order of $20 plus $3 charge for all deliveries.</p>
+          <hr class="d-sm-none">
+        </section>
+        <section id="testimonials" class="col-sm-4">
+          <p>"The best Chinese restaurant I've been to! And that's saying a lot, since I've been to many!"</p>
+          <p>"Amazing food! Great service! Couldn't ask for more! I'll be back again and again!"</p>
+        </section>
+      </div>
+      <div class="text-center">&copy; Copyright David Chu's China Bistro 2016</div>
+    </div>
+  </footer>
+<!-- jQuery (Bootstrap JS plugins depend on it) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

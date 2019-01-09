@@ -1,0 +1,2 @@
+https://github.com/twbs/bootstrap/issues/21590
+google: bootstrap 4 navbar-nav center collapsed  button menu jumps to the right

@@ -1,0 +1,397 @@
+body {
+  font-size: 16px;
+  color: #fff;
+  background-color: #61122f;
+  font-family: 'Oxygen', sans-serif;
+}
+
+/** HEADER **/
+#header-nav {
+  background-color: #f6b319;
+  /*border-radius: 0; staat zo te zien std op 0 */
+ /* border: 0; */  padding: 0 5px 0 0; /*standaard navbar padding staat op 0.5 en 1rem, dus 8 en 16 */
+}
+
+#logo-img {
+  background: url('../images/restaurant-logo_large.png') no-repeat;
+  width: 150px;
+  height: 150px;
+  margin: 10px 15px 10px 0;
+}
+
+.navbar-brand {
+  padding-top: 25px; 
+}
+
+.navbar-brand h1 { /* Restaurant name */
+  font-family: 'Lora', serif;
+  color: #557c3e;
+  font-size: 1.35em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #222;
+  /*margin-top: 0; */
+  margin-bottom: 10px;  
+  line-height: 0.75;  
+}
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+.navbar-brand span { /* Kosher cert */
+  color: #000;
+  text-transform: uppercase;
+  font-size: .63em;
+  vertical-align: middle;
+}
+/*.navbar .navbar-toggler-icon {
+  /* https://codepen.io/haleonearth/pen/rGoWGg . Om de kleur van de icon bars in de button aan te passen. Ook dikte, lengte, ed kan zo aangepast worden */
+  /*background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#61122f' stroke-width='1.6' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+
+  }*/
+.navbar-toggler .icon-bar {
+  background-color: #61122f;
+  display: block; 
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+}
+.navbar-toggler .icon-bar + .icon-bar {
+      margin-top: 4px;
+}
+#header-nav button {
+  margin-top: 50px;  
+}
+#header-nav button.navbar-toggler {  /*kadertje rond button*/
+  border: 1px solid #61122f; 
+}
+#nav-list /*de ul*/ a { /* Kleur vd links*/
+  color: #951C49; text-align: center; /*Anders staat het uitgeklapte menu helemaal rechts*/ 
+} 
+#nav-list a .fas, #nav-list #phone a  { /* De awesomes en het tel.nr.*/ 
+  font-size: 1.8em; 
+} 
+#nav-list #phone a { /* Phone number. Negatieve margin-top, omdat anders niet op dezelfde hoogte kwam dan de awesomes.*/
+  /*Padding 0 omdat anders 'We Deliver' te laag komt */
+  padding-bottom: 0; margin-top: -10px;
+}
+#nav-list #phone div { /* We Deliver */
+  text-align: right; margin-top: -5px; color: #557c3e; margin-right: 10px;
+}
+#nav-list a:hover { 
+  background: #E7E7E7; /* lichte achtergrond */
+}
+.nav-pills .active { 
+  background: #E7E7E7; /* lichte achtergrond */
+ 
+}
+#call-btn > a {
+    font-size: 1.5em;
+    display: block; /* Zoniet is het blok slechts zo groot als de inhoud*/
+    margin: 20px 20px 0 20px;
+    padding: 10px;
+    border: 2px solid #fff;
+    background-color: #f6b319;
+    color: #951c49;
+}
+#xs-deliver {
+    margin-top: 5px;
+    font-size: .7em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+/* Hier zet hij nog de gemeenschappelijke stijlen  die ik herhaal in de .container .jumbotron binnen de media queries */
+#menu-tile, #specials-tile, #map-tile {
+  height: 250px; /* Is de hoogte van de de img file */
+  width: 100%;
+  margin-bottom: 15px;
+  position: relative;
+  border: 2px solid #3F0C1F;
+  overflow: hidden;
+}
+#menu-tile:hover, #specials-tile:hover, #map-tile:hover {
+  box-shadow: 0 1px 5px 1px #cccccc;
+}
+
+#menu-tile {
+  background: url('../images/menu-tile.jpg') no-repeat;
+  background-position: center;
+}
+#specials-tile {
+  background: url('../images/specials-tile.jpg') no-repeat;
+  background-position: center;
+}
+
+#menu-tile span, #specials-tile span, #map-tile span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  background-color: #000;
+  color: #fff;
+  opacity: .8;
+}
+
+/* FOOTER */
+.card-footer {
+  margin-top: 30px;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  background-color: #222;
+  border-top: 0;
+}
+.card-footer div.row {
+  margin-bottom: 35px;
+}
+#hours, #address {
+  line-height: 2;
+}
+#hours > span, #address > span {
+  font-size: 1.3em;
+}
+#address p {
+  color: #557c3e;
+  font-size: .8em;
+  line-height: 1.8;
+}
+#testimonials {
+  font-style: italic;
+}
+#testimonials p:nth-child(2) {
+  margin-top: 25px;
+}
+/* END FOOTER */
+
+/* MENU CATEGORIES PAGE */
+.category-tile { 
+  position: relative;
+  border: 2px solid #3F0C1F;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 15px;
+}
+.category-tile span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  background-color: #000;
+  color: #fff;
+  opacity: .8;
+}
+.category-tile:hover {
+  box-shadow: 0 1px 5px 1px #cccccc;
+}
+
+#menu-categories-title + div {
+  margin-bottom: 50px;
+}
+/* END MENU CATEGORIES PAGE */
+/* SINGLE CATEGORY PAGE */
+.menu-item-tile {
+  margin-bottom: 25px;
+}
+.menu-item-tile hr {
+  width: 80%; background-color: white; /*Anders is hr onzichtbaar*/
+}
+.menu-item-tile .menu-item-price {
+  font-size: 1.1em;
+  text-align: right;
+  margin-top: -15px;
+  margin-right: -15px;
+}
+.menu-item-tile .menu-item-price span {
+  font-size: .6em;
+}
+.menu-item-photo {
+  position: relative;
+  border: 2px solid #3F0C1F; 
+  overflow: hidden;
+  padding: 0;
+  margin-right: -15px;
+  margin-left: auto;
+  margin-bottom: 20px;
+  max-width: 250px;
+}
+.menu-item-photo div {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  background-color: #557c3e;
+  text-align: center;
+}
+.menu-item-description {
+  padding-right: 30px;
+}
+h3.menu-item-title {
+  margin: 0 0 10px;
+}
+.menu-item-details {
+  font-size: .9em;
+  font-style: italic;
+}
+/* END SINGLE CATEGORY PAGE */
+@media (max-width: 767px) {
+	/*container max-width stond op 500+ in dev. tools. Als je niet vergroot verspringt de button naar onder de naam als
+	die bij verbreden te groot wordt*/
+  .navbar-expand-md>.container {/*Om de 0 padding en max-width uit de scss te overschrijven*/ padding-right: 15px;
+  				padding-left: 15px; max-width: 767px; /*align-items: stretch;*/}
+  /*Header*/ 
+  .navbar-brand {
+    padding-top: 10px;
+    height: 95px;
+  }
+  .navbar-brand h1 { /* Restaurant name */
+    padding-top: 10px; /*margin-left: 15px;*/
+    font-size: 5vw; /* 1vw = 1% of viewport width */
+  } 
+  .navbar-brand img, .navbar-brand span { /* Kosher cert */ 
+    font-size: .5em; 
+  }   
+  .navbar-brand img { /* Star-K */ 
+    height: 20px; /*margin-left: 15px;*/
+  }
+  /* Id collapsable-nav kan blijkbaar dubbel gebruikt worden:; gewoon in onze ss en ook verwijzend naar de data-target van de button.
+  De 2 defs hierna: bedoeling is de link tekst wat groter te maken en vervolgens de awesome dezelfde font-size te geven. De 1e 
+  def maakt de link tekst wat groter. De awesome fas zit echter ook in de link en krijgt door 
+  '#nav-list a .fas' van buiten deze media query een font-size van 1.8em van de font-size van de a uit deze media query.
+  Vandaar de 2de def die zegt dat de awesome dezelfde font-size dan de link tekst moet hebben. */
+  .navbar-toggler { height: 33px;}
+  #header-nav #nav-list { /*Om het horizontale menu meer naar rechts te krijgen en op dezelfde hoogte als bij hem */
+  	/* margin-right: -35px; */ margin-top: 15px; 
+  }
+  #nav-list a { 
+   font-size: 1.2em;
+  } 
+  #nav-list a .fas { 
+  font-size: 1em; /* Deze maakt dat de awesome de font-size van '#nav-list a' overneemt. Deze wint op de vorige door specificity*/
+  margin-right: 5px; 
+  } 
+  #main-content {padding-right: 15px; padding-left: 15px; max-width: 767px;
+  	/*Om de 0 padding en max-width uit de scss te overschrijven*/}
+  .container .jumbotron {
+    margin-top: 30px;
+    padding: 0; box-shadow: 20px 20px #3F0C1F; border: 2px solid #3F0C1F;
+   }
+
+  /*Ondanks dat we voor #menu-tile, #specials-tile, #map-tile de width op 100% zetten, zien we bij xs dat de bg img van de
+   1e 2 tiles niet meer tot aan de linker en rechter rand van de parent box gaan. We lossen dit op door de 100% width van die 
+   2 tiles te veranderen door de  werkelijke breedte van de img file.*/
+  #menu-tile, #specials-tile {
+    width: 360px;
+    margin: 0 auto 15px;
+  }
+  /* Footer */
+  .card-footer section {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .card-footer section:nth-child(3) {
+    margin-bottom: 0; /* margin already exists on the whole row */
+  }
+  .card-footer section hr, .menu-item-tile hr {
+    width: 50%; background-color: white; /*Anders is hr onzichtbaar*/
+  }
+  /* End Footer */
+  .menu-item-photo {
+    margin-right: auto;
+}
+  .menu-item-tile .menu-item-price {
+    text-align: center;
+  }
+  .menu-item-description {
+    text-align: center;
+  }
+  .menu-item-tile hr {
+    width: 80%; background-color: white; /*Anders is hr onzichtbaar*/
+  }
+
+/*@media (min-width: 768px) {
+.navbar-collapse {display: inline-flex!important;} } */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Home Page */
+  .container .jumbotron {
+    background: url('../images/jumbotron_768.jpg') no-repeat;
+    height: 432px; box-shadow: 20px 20px #3F0C1F; border: 2px solid #3F0C1F; margin-top: 20px;
+  }
+    #header-nav #nav-list { /*Om het horizontale menu meer naar rechts te krijgen en op dezelfde hoogte als bij hem */
+  	/* margin-right: -35px; */ margin-top: -25px; 
+  }
+
+}
+ @media (min-width: 992px) {   
+	#header-nav #nav-list { /*Om het horizontale menu meer naar rechts te krijgen en op dezelfde hoogte als bij hem */
+  	/* margin-right: -35px; */ margin-top: 20px;
+  }
+}
+  @media (min-width: 992px) and (max-width: 1199px) {
+  /* Header */
+  #logo-img {
+    background: url('../images/restaurant-logo_medium.png') no-repeat;
+    width: 100px;
+    height: 100px;
+    margin: 5px 5px 5px 0;
+  }
+  .container .jumbotron {
+    background: url('../images/jumbotron_992.jpg') no-repeat;
+    height: 558px; box-shadow: 30px 30px #3F0C1F; border: 2px solid #3F0C1F; margin-top: 20px;
+}
+}
+
+@media (min-width: 1200px) {
+  .container .jumbotron {
+    background: url('../images/jumbotron_1200.jpg') no-repeat;
+    height: 675px; box-shadow: 30px 30px #3F0C1F; border: 2px solid #3F0C1F; margin-top: 20px;
+  }
+}
+
+/* Volgende lijn nodig in Bs4, anders springt het vlugger dan bij hem op 100% */
+@media (max-width: 575px) and (min-width: 480px) { .col-sm-6 {width: 50%;} }
+
+/********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
+@media (max-width: 479px) {
+  /* Header */
+  .navbar-brand {max-width: 200px;} /*Anders springt de button nar onder */
+  .navbar-brand h1 { /* Restaurant name */
+    padding-top: 5px;
+    font-size: 6vw;
+  }
+  /* End Header */
+  
+  /* Home page */
+  #menu-tile, #specials-tile, #map-tile {
+    width: 280px; /*Anders valt er een deel van de img weg¨*/
+    margin: 0 auto 15px;
+  }
+  /*.col-xxs-12 { Haalt hij uit bs col-xs-12 en begrijpt zelf niet waarom er de relative pos. en padding staat en float,
+    maar hij wou consistent blijven met bs. Achteraf beseft dat het eigenlijk niet nodig is omdat als zonder media Query
+    ze gewoon onder mekaar komen*/
+   /* position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left; */
+    /*width: 100%;
+
+  }  */
+}
+
+
+
+/* Voor de navbar-button: https://github.com/iamphill/Bootstrap-Offcanvas/issues/30. Hij heeft de icon-bar styling uit Bs3 in zijn 
+eigen style gezet.*/
+
+
+
+    
+
+ 

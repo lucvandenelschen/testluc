@@ -1,0 +1,18 @@
+@media (max-width: 479px) {
+  /* Header */
+    .navbar-expand-md>.container {/*Om de 0 padding en max-width uit de scss te overschrijven*/ padding-right: 15px;
+       padding-left: 15px; max-width: 320px; /*align-items: stretch;*/}
+    .navbar-brand h1 { /* Restaurant name 6vw ipv 5vw*/
+    padding-top: 5px; max-width: 220px; /*max-width om te vermijden dat de button naar onder springt bij super smal 
+    Bij de max 767 deden we het met alleen max-width container, maar dat ging hier niet */
+    font-size: 6vw;
+  }
+  /* End Header */
+  
+  /* Om het afkappen van de foto op extra smalle devices tegen te gaan */
+
+  #menu-tile, #specials-tile {
+    width: 280px;
+    margin: 0 auto 15px;
+  }
+}

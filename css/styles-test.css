@@ -1,0 +1,148 @@
+body {background-color: #61122f;}
+
+/* Gele achtergrond */
+#navbar {background-color: #f6b319;} 
+
+#logo-img {background: url('../images/restaurant-logo_large.png') no-repeat;
+width: 150px;
+  height: 150px;
+  margin: 10px 15px 10px 0;}
+
+/* Restaurant naam lager */
+.navbar-brand, #navbarTogglerContent {padding-top: 25px;}
+/*hr moet over ganse breedte en wat hoger dan standaars */
+#navbarTogglerContent hr { background-color: white; margin-top: -20px;
+  margin-right: -100px; margin-left: -100px;}
+/*#navbarTogglerContent { min-width: 500px;}
+
+/* Rest. naam style */
+#brand-name a {text-decoration: none;}
+#brand-name h1 {font-family: 'Lora', serif;
+  color: #557c3e;
+  /*waarom h1 als we toch font-size terug verlagen? Test, vervangen door div:
+    spacing tussen letters lijkt dan wat groter te worden.*/
+  font-size: 1.35em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #222;
+  margin-bottom: 10px;  
+  line-height: 0.75; }
+
+/* Kosher cert */
+.navbar-brand span { 
+  color: #000;
+  text-transform: uppercase;
+  font-size: .63em;
+  vertical-align: middle;
+}
+
+#nav-list {margin-top: -10px;}
+#nav-list a {text-decoration: none; color: #61122f; }
+/*lichte bg bij hover*/
+#nav-list #highlight:hover { background: #E7E7E7; }
+/*zonder padding plakt highlight border ertegen*/
+#nav-list #highlight { padding: 10px 10px 10px 10px; text-align: center; font-size: 1.2em;}
+#nav-list span {font-size: 1.5em;}
+/*neg. margin om de padding-right te compenseren. Denk dat anders de container
+  rechter rand niet met container body aligneert.
+  White-space om line break te verhinderen bij squeeze*/
+#phone {color: #557c3e; line-height: 0.95; margin-right: -10px; 
+  white-space: nowrap; font-weight: 445;}
+#phone #highlight {text-align: right;}
+#deliver {text-align: right; padding-right: 10px;}
+#tel-mob { width: 90%; background-color: #f6b319; font-size:1.5em;
+   margin-top: 10px; text-align: center; border-radius: 5px; 
+  padding-top: 10px; padding-bottom: 10px; border: 2px solid white;}
+#tel-mob a { color: #61122f; text-decoration: none;}
+#tel-mob i { margin-right: 10px;}
+#deliver-mob {text-align: center; color: white; text-transform: uppercase;
+      font-size: 0.7em; letter-spacing: 2px;}
+
+.jumbotron {padding:0; margin-top: 30px; border: 1px solid black;
+  box-shadow: 20px 20px #3F0C1F; border: 2px solid #3F0C1F;}
+
+#menu-tile {background: url('../images/menu-tile.jpg') no-repeat;
+  background-position: center;}
+#specials-tile {background: url('../images/specials-tile.jpg') no-repeat;
+  background-position: center;}
+#menu-tile, #specials-tile, #map-tile {height: 250px; border: 2px solid #3F0C1F;
+  position: relative;}
+#menu-tile span, #specials-tile span, #map-tile span {
+    position: absolute; bottom: 0; text-align: center;
+    width: 100%; text-transform: uppercase; font-size: 1.6em;
+    color: white; background-color: black; opacity: 0.8;}
+#menu-tile:hover, #specials-tile:hover, #map-tile:hover {
+  box-shadow: 0 1px 5px 1px #cccccc;
+}
+footer {background-color: #222; color: white; text-align: center;
+  margin-top: 30px; padding-top: 35px; padding-bottom: 30px;
+}
+#hours, #address {
+  line-height: 2;
+}
+#hours > span, #address > span {
+  font-size: 1.3em;
+}
+
+@media (min-width: 1200px) {
+  .container .jumbotron {
+    background: url('../images/jumbotron_1200.jpg') no-repeat;
+    height: 675px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Header img kleiner*/
+  #logo-img {
+    background: url('../images/restaurant-logo_medium.png') no-repeat;
+    width: 100px;
+    height: 100px;
+    margin: 5px 5px 5px 0;
+  }
+  .container .jumbotron {
+    background: url('../images/jumbotron_992.jpg') no-repeat;
+    height: 558px;
+  }
+} 
+@media (max-width: 991px) and (min-width: 768px) {
+  /*Anders te laag */
+  #navbarTogglerContent {margin-top: -20px; padding-top: 0;width: 457px;}  
+  .container .jumbotron {
+    background: url('../images/jumbotron_768.jpg') no-repeat;
+    height: 432px;
+  }
+} 
+
+@media (max-width: 991px) {
+  #menu-tile, #specials-tile {margin-bottom: 15px;}
+
+@media (max-width: 767px) {
+  /*Highlight over ganse breedte */
+  #nav-list #highlight {margin-right: -100px; margin-left: -100px;} 
+  #nav-list span {font-size: 1em; margin-right: 5px;}
+  .navbar-brand span { /* Kosher cert */  font-size: .5em; }
+  .navbar-brand img { /* Star-K */ height: 20px;} 
+  .navbar-brand { padding-top: 10px; }
+  #navbar { padding-top:0 padding-bottom 0; }
+  #brand-name h1 {font-size: 5vw; max-width: 483px;}
+  /*Zonder de max-width is er een wrap van de button bij max grootte van de h1 
+  Er bestaat ook mss nog iets als max-font-size maar niet meer naar gezocht*/
+   #menu-tile, #specials-tile {
+    width: 360px; margin-right: auto; margin-left: auto;
+    margin-bottom: 15px;
+  }
+  .container { max-width: 750px;} 
+}
+
+@media (max-width: 479px) {
+  /* Header */
+  .navbar-brand {max-width: 70px;} /*Anders springt de button nar onder */
+  .navbar-brand h1 { /* Restaurant name */
+    padding-top: 5px;
+    font-size: 6vw;
+  }
+  #menu-tile, #specials-tile, #map-tile {
+    width: 280px; /*Anders valt er een deel van de img weg¨*/
+    margin: 0 auto 15px;
+  }
+  }
